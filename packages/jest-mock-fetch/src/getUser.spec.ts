@@ -18,6 +18,7 @@ describe('getUser', () => {
     const user = await getUser(1)
     expect(global.fetch).toBeCalledTimes(1)
     expect(global.fetch).toBeCalledWith('https://dummyjson.com/users/1')
+    expect(jest.mocked(fetch).mock.calls[0][0]).toBe('https://dummyjson.com/users/1')
     expect(user).toMatchObject({ id: 1, username: 'alice' })
   })
 
@@ -29,6 +30,7 @@ describe('getUser', () => {
     const user = await getUser(2)
     expect(global.fetch).toBeCalledTimes(1)
     expect(global.fetch).toBeCalledWith('https://dummyjson.com/users/2')
+    expect(jest.mocked(fetch).mock.calls[0][0]).toBe('https://dummyjson.com/users/2')
     expect(user).toMatchObject({ id: 2, username: 'bob' })
   })
 })
