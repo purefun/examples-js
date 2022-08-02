@@ -1,7 +1,23 @@
 module.exports = {
   extends: ["next", "prettier"],
+  plugins: ["@typescript-eslint"],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
+    semi: "off",
+    "@typescript-eslint/semi": ["warn", "never"],
+    quotes: "off",
+    "@typescript-eslint/quotes": ["warn", "single"],
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["warn", "always-multiline"],
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": ["warn", "always"],
+    indent: "off",
+    "@typescript-eslint/indent": ["warn", 2],
+    "object-curly-newline": ["warn", { consistent: true }],
+    "array-bracket-spacing": ["warn", "never"],
+    "comma-spacing": "off",
+    "@typescript-eslint/comma-spacing": ["warn"],
+    "no-multiple-empty-lines": ["warn", { max: 2 }],
   },
 };
